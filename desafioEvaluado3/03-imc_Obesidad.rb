@@ -11,6 +11,7 @@ end
 
 # metodo para interpretar el resultado del imc
 def interpretar_imc(imc)
+  puts ''
   if imc < 18.5
     'Bajo peso'
   elsif imc < 25
@@ -26,10 +27,6 @@ def interpretar_imc(imc)
   # ○ Obesidad grado III: Más de 40 - Muy severo
   elsif imc > 40
     'Obesidad grado 3 o Muy severo'
-  # respuesta en caso de un error o valores criticos
-  else
-    puts 'compruebe los valores entregados'
-    puts 'tu imc peligrosamente alto, por favor ve a tu medico'
   end
 end
 
@@ -55,7 +52,7 @@ categoria = interpretar_imc(imc)
 
 # comprobación de que imc sea un numero
 if imc.nan?
-  puts 'por favor ingrese un número y recuerda poner tu altura en metro por ejemplo: 1.7'
+  puts 'comp´rueba los valores entregados y recuerda poner tu altura en metro por ejemplo: 1.7'
 else
   puts "Su IMC es: #{imc}"
   puts "Categoría: #{categoria}"
