@@ -39,18 +39,23 @@ end
 # Crear un método photos_count que reciba el hash de respuesta y devuelva un nuevo
 # hash con el nombre de la cámara y la cantidad de fotos. 
 def photos_count(data)
-
+    
+    # Guardamos la información
     data_camera_photos = data["photos"]
     camera_photos = {}
 
+    # Pasamos por un each para conseguir el nombre de la camara
     data_camera_photos.each do |data_camera|
         camera_name = data_camera["camera"]["name"]
+    # pasamos a int el resultado ya que el primer resultado sería nill y le vamos sumando de a uno por ocurrencia
         camera_photos[camera_name] = camera_photos[camera_name].to_i + 1
     end 
 
     puts camera_photos
 
 end
+
+#clave de la api de la nasa
 apikey = "7HMCSocbhyg0oC4bwWmaNhshT1yhq0NZ78FeW5CV"
 
 # Invocación del método ApiNasa
